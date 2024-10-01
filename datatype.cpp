@@ -11,7 +11,8 @@ using namespace std;
 
         cout<<n<<endl;
         cout<< fixed << setprecision(8) <<m<<endl;
-        cout<< fixed << setprecision(8) << k <<endl ;
+        cout<< fixed << setprecision(8) << k <<endl;
+        // heloo9 world
         cout<<k<<endl;
         cout<<o<<endl;
 
