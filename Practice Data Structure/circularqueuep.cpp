@@ -1,51 +1,51 @@
 #include<iostream>
 #define MAX 5
 using namespace std;
-int cqueue[MAX],front=-1, rear = -1;
+
+int cqueue[MAX], front = -1, rear = -1;
 
 void insert(){
     int val;
-    if((rear+1)%MAX==front){
-        cout<<"Queue is full"<<endl;
-        return;
+    if((rear + 1)%MAX == front){
+        cout<<"The queue is full"<<endl;
     }else{
+        if(front=-1){
+            front=0;
+        }
         cout<<"Enter the element: "<<endl;
         cin>>val;
 
-        if(front==-1){
-            front=0;
-        }
         rear=(rear+1)%MAX;
         cqueue[rear]=val;
     }
 }
 
-void Delete(){
-    if( front == -1 && rear == -1){
+void deletee(){
+    if(front== -1 && rear == -1){
         cout<<"The queue is empty"<<endl;
-        return;
     }else{
-        cout<<"the deleted element is : "<<cqueue[front]<<endl;
         if(front==rear){
             front=rear=-1;
         }else{
-        front=(front+1)%MAX;
+            cout<<"The deleted element is: "<<cqueue[front]<<endl;
+            front=(front+1)%MAX;
+        }
     }
-}
 }
 
 void display(){
-     if( front == -1 && rear == -1){
-        cout<<"The queue is empty"<<endl;    
+    if(front== -1 && rear == -1){
+        cout<<"The queue is empty"<<endl;
+        return;
     }else{
         cout<<"The elements are: "<<endl;
         int i=front;
         while(true){
             cout<<cqueue[i]<<endl;
-            if(i == rear){
+            if(i==rear){
                 break;
             }
-            i=(i + 1) % MAX;
+            i = (i + 1)%MAX;
         }
     }
 }
@@ -53,7 +53,7 @@ void display(){
 int main(){
     int ch;
 
-cout<<"1. Insert the element: "<<endl;
+    cout<<"1. Insert the element: "<<endl;
     cout<<"2. Delete the element: "<<endl;
     cout<<"3. Display: "<<endl;
     cout<<"4. Exit "<<endl;
@@ -67,7 +67,7 @@ cout<<"1. Insert the element: "<<endl;
         case 1:insert();
             break;
 
-            case 2:Delete();
+            case 2:deletee();
             break;
 
             case 3:display();

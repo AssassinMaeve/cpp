@@ -1,41 +1,39 @@
 #include<iostream>
 using namespace std;
 
-int queue[100],front=-1,rear=-1,n=100;
+int queue[5],front=-1,rear=-1,n=5;
 
 void insert(){
     int val;
     if(rear==n-1){
-        cout<<"Queue Overflow"<<endl;
-        }else{
-            if(front==-1)
+        cout<<"The queue is full"<<endl;
+    }else{
+        if(front==-1)
             front=0;
-            cout<<"Enter the values to insert: "<<endl;
+            cout<<"Enter the elements: "<<endl;
             cin>>val;
+            
             queue[++rear]=val;
+            
+        
     }
 }
 
-void Delete(){
-    
+void deletee(){
     if(front==-1 || front>rear){
-        cout<<"Queue is underflow"<<endl;
+        cout<<"The queue is empty"<<endl;
         return;
     }else{
-        {
-            
-            cout<<"The element to be deleted is: "<<queue[front]<<endl;
-            front++;
-            
-        }
+        cout<<"The deleted elements is: "<<queue[front]<<endl;
+        front++;
     }
 }
 
 void display(){
     if(front==-1){
-        cout<<"Queue is empty"<<endl;
+    cout<<"The queue is empty"<<endl;
     }else{
-        cout<<"The elements present are: "<<endl;
+        cout<<"The element in the queue is: "<<endl;
         for(int i=front;i<=rear;i++){
             cout<<queue[i]<<endl;
         }
@@ -45,29 +43,32 @@ void display(){
 int main(){
     int ch;
 
-    cout<<"1. Insert elements"<<endl;
-    cout<<"2. Delete elements"<<endl;
-    cout<<"3. Display"<<endl;
-    cout<<"4. Exit"<<endl;
+    cout<<"1. Insert the elements: "<<endl;
+    cout<<"2. delete the elements: "<<endl;
+    cout<<"3. display the elements: "<<endl;
+    cout<<"4. exit: "<<endl;
 
     do{
-        cout<<"Enter the choice"<<endl;
+        cout<<"enter ur choice: "<<endl;
         cin>>ch;
-
         switch(ch){
             case 1:insert();
             break;
 
-            case 2:Delete();
+            case 2:deletee();
             break;
 
             case 3:display();
             break;
 
-            case 4:cout<<"Exiting...."<<endl;
+            case 4:cout<<"exit"<<endl;
             break;
 
-            default: cout<<"Invalid input"<<endl;
+            default:cout<<"Invalid choice"<<endl;
         }
-    }while(ch!=4);
+        
+    }while (ch!=4);
+        return 0;
+           
+        
 }
