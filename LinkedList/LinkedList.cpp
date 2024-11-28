@@ -67,6 +67,16 @@ class node{         // we create a class with variable as int data and we create
 
 
     void deletion(node* &head, int val){        // deleting a node in a list
+
+        if(head==NULL){                         // head points to null that means list is empty
+            return;
+        }
+
+        if(head->next==NULL){                   //if your first element is your last element
+            deleteathead(head);                 // we delete it at head which is the first element
+            return;
+        }
+
         node* temp = head;                      // assigning head to temp
         while(temp->next->data!=val){           // traversing to the node 
             temp=temp->next;                    // Inside the loop, temp is updated to point to the next node (temp = temp->next)
