@@ -1,8 +1,10 @@
-# CPP CODES
-- Data Structure Lab Programs & Notes.
+Data Structure Lab Programs & Notes:
 
-To the kind attention of the students accessing this repository:
-- Don't just download the files or copy the codes. Explore github, understand what is Git.
-- Don't call yourself a programmer or a developer, if you don't know what is Git and Github.
+Attention Students Accessing This Repository:
+- Please do not simply download the files or copy the code. Take the time to explore GitHub and understand what Git is.
+- You cannot call yourself a programmer or developer if you are unfamiliar with Git and GitHub.
+
+****Important Note****
+This repository is still under development. If you cannot find what you are looking for, please check back at a later date.
 
 Thank you!
