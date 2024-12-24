@@ -1,40 +1,71 @@
 #include <iostream>
 using namespace std;
 
-// Merge two subarrays
-void merge(int arr[], int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
-    int L[n1], R[n2];
+void merge(int arr[], int l, int mid, int r) {
+    int n1 = mid - l + 1;
+    int n2 = r - mid;
 
-    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
-    for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+    // Create temporary arrays
+    int a[n1];
+    int b[n2];
 
-    int i = 0, j = 0, k = left;
-    while (i < n1 && j < n2) arr[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];
-    while (i < n1) arr[k++] = L[i++];
-    while (j < n2) arr[k++] = R[j++];
+    // Copy data to temporary arrays
+    for (int i = 0; i < n1; i++) {
+        a[i] = arr[l + i]; // Corrected indexing
+    }
+
+    for (int i = 0; i < n2; i++) {
+        b[i] = arr[mid + 1 + i]; // Corrected indexing
+    }
+
+    int i = 0, j = 0, k = l;
+
+    // Merge the temporary arrays back into arr[l..r]
+    while (i < n1 && j < n2) { // Corrected condition
+        if (a[i] <= b[j]) { // Use <= to maintain stability
+            arr[k] = a[i];
+            i++;
+        } else {
+            arr[k] = b[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy remaining elements of a[] if any
+    while (i < n1) {
+        arr[k] = a[i];
+        i++;
+        k++;
+    }
+
+    // Copy remaining elements of b[] if any
+    while (j < n2) {
+        arr[k] = b[j];
+        j++;
+        k++;
+    }
 }
 
-// MergeSort function
-void mergeSort(int arr[], int left, int right) {
-    while (left < right) {
-        int mid = left + (right - left) / 2;
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, left, mid, right);
-        break;                                      // Add loop functionality by breaking recursion
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int mid = l + (r - l) / 2; // To avoid overflow
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
+        merge(arr, l, mid, r);
     }
 }
 
 int main() {
     int arr[] = {24, 54, 95, 12, 22, 11, 90};
     int n = sizeof(arr) / sizeof(arr[0]);
-    
-    mergeSort(arr, 0, n - 1);
+
+    mergeSort(arr, 0, n - 1); // Corrected the right index
 
     cout << "Sorted array: ";
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
     cout << endl;
 
     return 0;
