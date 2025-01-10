@@ -5,6 +5,6 @@ Attention Students Accessing This Repository:
 - You cannot call yourself a programmer or developer if you are unfamiliar with Git and GitHub.
 
 Important Note:
-- This repository is still under development. If you cannot find what you are looking for, please check back at a later date.
+- This repository is now complete. You can find all the necessary files here. :)
 
 Thank you!
