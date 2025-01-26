@@ -14,7 +14,7 @@ int main() {
     int arr[n];
 
     for(int i = 0; i < n; i++) {
-        cin >> arr[i];  // Correct input here
+        cin >> arr[i];  // Correct input here 
     }
 
     reverse(arr, n);  // Call reverse without cout
