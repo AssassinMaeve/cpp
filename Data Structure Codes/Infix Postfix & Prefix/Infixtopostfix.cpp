@@ -33,8 +33,9 @@ string infixtopostfix(string s) {
                 res += st.top();
                 st.pop();
             }
-            st.push(ch);
+            
         }
+        st.push(ch);
     }
 
     // Pop all the remaining operators from the stack
