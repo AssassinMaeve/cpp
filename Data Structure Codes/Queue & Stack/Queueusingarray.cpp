@@ -19,7 +19,8 @@ void Insert(){
 
 void Delete(){
     int q;
-    if(front==-1 || front>rear){
+
+    if(front==-1 || front > rear ){
         cout<<"Queue is underflow"<<endl;
         return;
     }else{
@@ -34,7 +35,7 @@ void display(){
         cout<<"queue is empty"<<endl;
     }else{
         cout<<"Elements are: "<<endl;
-        for(int i=front;i<=rear;i++){
+        for(int i=front ; i <= rear; i++){
             cout<<queue[i]<<endl;
         }
     }
@@ -66,8 +67,6 @@ int main(){
             default:cout<<"Invalid choice"<<endl;
         }
         
-    }while (ch!=4);
-        return 0;
-           
+    }while (ch!=4);     
         
 }
