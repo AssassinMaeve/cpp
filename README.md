@@ -1,4 +1,4 @@
-# 📂 Data Structures Lab Programs & Notes (MSc Software Technology)  
+# 📂 Data Structures Lab Programs & Notes
 
 ## 🚀 Welcome to the Data Structures Repository!  
 
