@@ -74,7 +74,3 @@ If you have suggestions, improvements, or additional programs to add, feel free 
 This repository is a **learning resource** and should be used as a reference. Take your time to explore and implement the programs instead of just copying the code.  
 
 ### **Happy Coding & Learning!** 🚀😊  
-
----
-
-Let me know if you'd like further refinements or additions! 🔥
